@@ -1,0 +1,40 @@
+@import "zen";
+
+.one, .two, .three {
+  height: 200px;
+  background: #ccc;
+  font: 14px/190px Helvetica, sans-serif;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.one {
+  @include zen-grid-item(1, 1);
+}
+
+.two {
+  @include zen-grid-item(1, 2);
+}
+
+.three {
+  @include zen-grid-item(1, 3);
+}
+
+@media screen and (max-width: 600px) {
+
+  .one {
+    @include zen-grid-item(3, 1);
+  }
+
+  .two {
+    @include zen-new-row();
+    @include zen-grid-item(3, 1);
+  }
+
+  .three {
+    @include zen-new-row();
+    @include zen-grid-item(3, 1);
+  }
+
+}
+

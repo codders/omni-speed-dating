@@ -1,0 +1,20 @@
+!!! 5
+%html
+  %head
+    %title= content_for?(:title) ? yield(:title) : "Poly Speed Dating"
+    %meta{:content => content_for?(:description) ? yield(:description) : "Poly Speed Dating", :name => "description"}
+    = stylesheet_link_tag :application, :media => "all"
+    = javascript_include_tag :application
+    = csrf_meta_tags
+    = yield(:head)
+
+  %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      %nav.navbar-inner
+        .container
+      %a.brand{:href => "/"} Poly Speed Dating
+    #main{:role => "main"}
+      .container
+        = render 'layouts/messages'
+        = yield
+      %footer
