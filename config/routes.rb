@@ -1,5 +1,11 @@
 PolySpeedDating::Application.routes.draw do
-  get "home/index"
+  get "home/landing"
+
+  get "home" => "home#index"
+  get "logout" => "home#landing"
+  get "profile" => "home#profile"
+  get "admin" => "home#admin"
+  get "events" => "home#events"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +56,7 @@ PolySpeedDating::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'home#landing'
 
   # See how all your routes lay out with "rake routes"
 

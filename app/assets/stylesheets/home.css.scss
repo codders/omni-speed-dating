@@ -1,6 +1,26 @@
 @import "zen";
 
-.one, .two, .three {
+.topbar {
+  height: 100px;
+  background: #aaa;
+
+  .icon {
+    height: 100px;
+    text-align: center;
+    float: left;
+  }
+
+  .navitem {
+    font: 20px/90px Helvetica, sans-serif;
+    text-align: center;
+    height: 100px;
+    padding: 0px 20px;
+    float: left;
+  }
+
+}
+
+.center {
   height: 200px;
   background: #ccc;
   font: 14px/190px Helvetica, sans-serif;
@@ -8,32 +28,24 @@
   border: 1px solid white;
 }
 
-.one {
-  @include zen-grid-item(1, 1);
+.topbar {
+  @include zen-grid-item(9, 1);
 }
 
-.two {
-  @include zen-grid-item(1, 2);
-}
-
-.three {
-  @include zen-grid-item(1, 3);
+.center {
+  @include zen-new-row();
+  @include zen-grid-item(7, 2);
 }
 
 @media screen and (max-width: 600px) {
 
-  .one {
-    @include zen-grid-item(3, 1);
+  .topbar {
+    @include zen-grid-item(9, 1);
   }
 
-  .two {
+  .center {
     @include zen-new-row();
-    @include zen-grid-item(3, 1);
-  }
-
-  .three {
-    @include zen-new-row();
-    @include zen-grid-item(3, 1);
+    @include zen-grid-item(9, 1);
   }
 
 }

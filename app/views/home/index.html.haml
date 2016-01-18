@@ -1,6 +1,14 @@
-%div.one
-  %p Block 1
-%div.two
-  %p Block 2
-%div.three
-  %p Block 3
+= title "Home"
+%div.topbar
+  %div.icon icon
+  %div.navitem
+    = link_to "Profile", profile_path
+  %div.navitem
+    = link_to "Admin", admin_path
+  %div.navitem
+    = link_to "Events", events_path
+
+%div.center
+  %h1 Welcome to your Poly Speed Dating homepage
+  %div
+    = link_to "Logout", logout_path

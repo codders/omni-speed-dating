@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title= content_for?(:title) ? yield(:title) : "Poly Speed Dating"
+    %title= "Poly Speed Dating #{content_for?(:title) ? ' - ' + yield(:title) : ''}"
     %meta{:content => content_for?(:description) ? yield(:description) : "Poly Speed Dating", :name => "description"}
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
