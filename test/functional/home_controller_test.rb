@@ -3,22 +3,30 @@ require 'test_helper'
 class HomeControllerTest < ActionController::TestCase
 
   test "should redirect to home page if logged in" do
-    logged_in_as :Dummy
+    logged_in_as :dummy
     get :landing
     assert_redirected_to "/home"
   end
 
   test "should get logged-in page" do
-    logged_in_as :Dummy
+    logged_in_as :dummy
     get :index
     assert_response :success
   end
 
   test "logged-in page should include logout link" do
-    logged_in_as :Dummy
+    logged_in_as :dummy
     get :index
     assert_response :success
     assert_select "a#logout", "Logout"
+  end
+
+  test "logged-in page should include user's name" do
+    logged_in_as :dummy
+    get :index
+    assert_response :success
+    assert_select "a#logout", "Logout"
+    assert_select "span#username", users(:dummy).name
   end
 
   test "should redirect to landing page from home page if not logged in" do
@@ -38,9 +46,9 @@ class HomeControllerTest < ActionController::TestCase
   end
 
   def logged_in_as(username)
-    user = User.find_by_name(username.to_s)
+    user = users(username)
     assert(user, "User should not be nil")
-    request.session['current_user'] = user
+    request.session['current_user'] = user.uid
   end
 
 end

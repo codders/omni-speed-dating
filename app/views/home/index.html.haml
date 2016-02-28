@@ -9,6 +9,8 @@
     = link_to "Events", events_path
 
 %div.center
-  %h1 Welcome to your Poly Speed Dating homepage
+  %h1 
+    Welcome to your Poly Speed Dating homepage,
+    %span{id: "username"}= current_user.name
   %div
     = link_to "Logout", logout_path, :id => "logout"

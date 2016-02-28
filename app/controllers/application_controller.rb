@@ -36,11 +36,11 @@ class ApplicationController < ActionController::Base
 
   def current_user=(user)
     @current_user = user
-    session['current_user'] = @current_user
+    session['current_user'] = @current_user ? @current_user.uid : nil
   end
 
   def current_user
-    @current_user ||= session['current_user']
+    @current_user ||= session['current_user'] ? User.find_by_uid(session['current_user']) : nil
   end
 
   def logged_in?

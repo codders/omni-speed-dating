@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
             u.email = user_data[:email]
           end
           u.provider = user_data[:provider]
+          if u.name.nil?
+            u.name = u.uid
+          end
           u.save
         end
       end
