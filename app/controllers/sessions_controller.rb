@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [ :create ]
+  skip_before_filter :verify_authenticity_token, :only => [ :create ]
 
   def create
     return permission_denied unless auth_hash
