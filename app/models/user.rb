@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
           u.save
         end
       end
+      u
     end
 
   end

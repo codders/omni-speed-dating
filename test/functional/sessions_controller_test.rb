@@ -14,6 +14,16 @@ class SessionsControllerTest < ActionController::TestCase
     assert_redirected_to '/'
   end
 
+  test "should create a new user if missing" do
+    users = User.all.size
+    request.env["omniauth.auth"] = { name: "Bob", uid: "bob@dummy.org", provider: "developer" }
+    post :create, :provider => "developer"
+    assert_response 302
+    assert_redirected_to '/'
+    assert_equal users + 1, User.all.size, "Should have created a new user"
+    assert_equal session["current_user"].uid, "bob@dummy.org", "Expected user to be added to session"
+  end
+
   test "should load existing user if present" do
     users = User.all.size
     existing_user = User.find_by_name("Dummy")
@@ -22,6 +32,7 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response 302
     assert_redirected_to '/'
     assert_equal users, User.all.size, "Should not have created a new user" 
+    assert_equal session["current_user"].uid, existing_user.uid, "Expected user to be added to session"
   end
 
   test "should save facebook username, email" do
