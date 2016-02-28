@@ -2,7 +2,7 @@ PolySpeedDating::Application.routes.draw do
   get "home/landing"
 
   get "home" => "home#index"
-  get "logout" => "home#landing"
+  get "logout" => "home#logout"
   get "profile" => "home#profile"
   get "admin" => "home#admin"
   get "events" => "home#events"
@@ -53,6 +53,11 @@ PolySpeedDating::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # OmniAuth setup
+  %w(get post).each do |method|
+    send(method, '/auth/:provider/callback', to: 'sessions#create')
+  end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

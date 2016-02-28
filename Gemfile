@@ -24,6 +24,9 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 
+gem 'omniauth', '~> 1.0'
+gem 'omniauth-facebook', '~> 3.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
