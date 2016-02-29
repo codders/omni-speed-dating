@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2.0
+env:
+  - RAILS_ENV=test
+before_script: bundle exec rake db:drop db:create db:migrate
+script: bundle exec rake test
+bundler_args: --without production
