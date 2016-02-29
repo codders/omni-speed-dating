@@ -1,3 +1,5 @@
+{<img src="https://travis-ci.org/codders/poly-speed-dating.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/codders/poly-speed-dating]
+
 == Poly Speed Dating
 
 Responsive rails web/mobile application for signing-up for, administering, attending and distributing feedback from speed-dating events.
