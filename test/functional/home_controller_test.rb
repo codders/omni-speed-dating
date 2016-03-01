@@ -45,10 +45,4 @@ class HomeControllerTest < ActionController::TestCase
     assert_select "a#login", "Login"
   end
 
-  def logged_in_as(username)
-    user = users(username)
-    assert(user, "User should not be nil")
-    request.session['current_user'] = user.uid
-  end
-
 end

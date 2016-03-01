@@ -28,6 +28,10 @@
   border: 1px solid white;
 }
 
+.content {
+  font: 14px Helvetica, sans-serif;
+}
+
 .topbar {
   @include zen-grid-item(9, 1);
 }

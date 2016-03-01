@@ -3,9 +3,10 @@ PolySpeedDating::Application.routes.draw do
 
   get "home" => "home#index"
   get "logout" => "home#logout"
-  get "profile" => "home#profile"
   get "admin" => "home#admin"
   get "events" => "home#events"
+
+  resource "profile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

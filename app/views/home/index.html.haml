@@ -1,12 +1,5 @@
 = title "Home"
-%div.topbar
-  %div.icon icon
-  %div.navitem
-    = link_to "Profile", profile_path
-  %div.navitem
-    = link_to "Admin", admin_path
-  %div.navitem
-    = link_to "Events", events_path
+= render "shared/nav"
 
 %div.center
   %h1 

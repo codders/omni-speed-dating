@@ -7,4 +7,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def logged_in_as(username)
+    user = users(username)
+    assert(user, "User should not be nil")
+    request.session['current_user'] = user.uid
+  end
+
 end

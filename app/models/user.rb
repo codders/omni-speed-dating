@@ -1,6 +1,14 @@
 class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
+  def gender_string
+    "Not set"
+  end
+
+  def orientation_string
+    "Not set"
+  end
+
   class << self
 
     def find_or_create_from_auth_hash(user_data)

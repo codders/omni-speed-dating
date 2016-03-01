@@ -1,0 +1,19 @@
+= title "Profile"
+= render "shared/nav"
+
+%div.center
+  %h1 
+    Welcome to your Profile,
+    %span{id: "username"}= current_user.name
+  %div.content
+    Current profile setting:
+    %br
+    %b Gender
+    = current_user.gender_string 
+    %br
+    %b Orientation
+    = current_user.orientation_string
+    %br
+    = link_to "Edit", edit_profile_path 
+  %div
+    = link_to "Logout", logout_path, :id => "logout"
