@@ -16,9 +16,5 @@
     #main{:role => "main"}
       .container
         = render 'layouts/messages'
-        = render 'shared/nav'
-        %div.center
-          = yield
-          %div
-            = link_to "Logout", logout_path, :id => "logout"
+        = yield
       %footer

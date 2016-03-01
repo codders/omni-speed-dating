@@ -1,9 +1,5 @@
 = title "Home"
-= render "shared/nav"
 
-%div.center
-  %h1 
-    Welcome to your Poly Speed Dating homepage,
-    %span{id: "username"}= current_user.name
-  %div
-    = link_to "Logout", logout_path, :id => "logout"
+%h1 
+  Welcome to your Poly Speed Dating homepage,
+  %span{id: "username"}= current_user.name

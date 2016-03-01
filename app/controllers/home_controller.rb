@@ -9,7 +9,11 @@ class HomeController < ApplicationController
   end
 
   def landing
-    redirect_to :home if logged_in?
+    if logged_in?
+      redirect_to :home
+    else
+      render :layout => "landing"
+    end
   end
 
   def logout
