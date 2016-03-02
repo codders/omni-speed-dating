@@ -43,6 +43,9 @@ gem 'omniauth-facebook', '~> 3.0'
 gem 'web-console', '~> 2.0', group: :development
 
 group :development, :test do
+  # Install coveralls for code coverage
+  gem "coveralls", require: false
+
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
