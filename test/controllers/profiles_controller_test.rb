@@ -19,4 +19,10 @@ class ProfilesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should update profile" do
+    logged_in_as :dummy
+    post :create, { gender: "male" }
+    assert_redirected_to profile_path
+  end
+
 end

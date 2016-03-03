@@ -59,4 +59,20 @@ class MatchingTest < ActiveSupport::TestCase
     assert_sane_match(matches, prefs)
   end
 
+  test "match with popular person" do
+    prefs = {
+      "Sam" => [ "Guillaume", "Chris", "Tom", "Phil" ],
+      "Sally" => [ "Phil" ],
+      "Lucy" => [ "Chris" ],
+      "Elaine" => [ "Tom" ],
+      "Phil" => [ "Sam", "Sally" ],
+      "Chris" => [ "Elaine", "Lucy", "Sam" ],
+      "Tom" => [ "Elaine", "Sam" ],
+      "Adele" => [ "Tom", "Guillaume" ],
+      "Guillaume" => [ "Adele", "Sam" ]
+    }
+    matches = Matching::Matcher.new.match(prefs)
+    assert_sane_match(matches, prefs)
+  end
+
 end
