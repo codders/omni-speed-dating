@@ -1,4 +1,4 @@
-PolySpeedDating::Application.routes.draw do
+OmniSpeedDating::Application.routes.draw do
   get "home/landing"
 
   get "home" => "home#index"

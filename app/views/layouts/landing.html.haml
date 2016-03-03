@@ -1,8 +1,8 @@
 !!! 5
 %html
   %head
-    %title= "Poly Speed Dating #{content_for?(:title) ? ' - ' + yield(:title) : ''}"
-    %meta{:content => content_for?(:description) ? yield(:description) : "Poly Speed Dating", :name => "description"}
+    %title= "Omni Speed Dating #{content_for?(:title) ? ' - ' + yield(:title) : ''}"
+    %meta{:content => content_for?(:description) ? yield(:description) : "Omni Speed Dating", :name => "description"}
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
@@ -12,7 +12,7 @@
     %header.navbar.navbar-fixed-top.navbar-inverse
       %nav.navbar-inner
         .container
-      %a.brand{:href => "/"} Poly Speed Dating
+      %a.brand{:href => "/"} Omni Speed Dating
     #main{:role => "main"}
       .container
         = render 'layouts/messages'
