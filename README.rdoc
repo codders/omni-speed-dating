@@ -1,8 +1,8 @@
-{<img src="https://travis-ci.org/codders/poly-speed-dating.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/codders/poly-speed-dating]
+{<img src="https://travis-ci.org/codders/omni-speed-dating.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/codders/omni-speed-dating]
 
-{<img src="https://coveralls.io/repos/github/codders/poly-speed-dating/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/codders/poly-speed-dating?branch=master]
+{<img src="https://coveralls.io/repos/github/codders/omni-speed-dating/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/codders/omni-speed-dating?branch=master]
 
-== Poly Speed Dating
+== Omni Speed Dating
 
 Responsive rails web/mobile application for signing-up for, administering, attending and distributing feedback from speed-dating events.
 
